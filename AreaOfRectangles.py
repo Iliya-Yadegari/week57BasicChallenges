@@ -1,23 +1,16 @@
-import sys
+width_1 = int(input('Enter the width of your first rectangle: '))
+height_1 = int(input('Enter the height of your first rectangle: '))
+width_2 = int(input('Enter the width of your second rectangle: '))
+height_2 = int(input('Enter the height of your second rectangle: '))
 
-try:
-    width1 = int(input("Enter the width of the first rectangle: "))
-    height1 = int(input("Enter the height of the first rectangle: "))
-    width2 = int(input("Enter the width of the second rectangle: "))
-    height2 = int(input("Enter the height of the second rectangle" ))
-except:
-    print("You should enter only numbers!!!")
-    sys.exit()
-
-area1 = width1 * height1
-area2 = width2 * height2
-
-print("Area of the first rectangle is", area1)
-print("Area of the second rectangle is", area2)
-
-if area1 > area2:
-    print("The first rectangle is bigger")
-elif area1 < area2:
-    print("The second rectangle is bigger")
+if width_1 < 0 or height_1 < 0 or width_2 < 0 or height_2 < 0:
+    print('Your measurements should not be below 0.')
 else:
-    print("Rectangles are equal")
+    area_1 = width_1 * height_1
+    area_2 = width_2 * height_2
+    
+if area_1 < area_2:
+    print(f'The area of rectangle 1 is {area_1} and the area of rectangle 2 is {area_2}.\nTherefore rectangle 2 is bigger.')
+
+elif area_1 > area_2:
+    print(f'The area of rectangle 1 is {area_1} and the area of rectangle 2 is {area_2}.\nTherefore rectangle 1 is bigger.')
